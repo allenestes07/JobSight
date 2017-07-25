@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import FontAwesome from 'react-fontawesome';
 import NavBar from './components/NavBar';
 import SideBar from './components/SideBar';
-import profileimg from './images/profileimg.jpg';
-
-const navColor = '#2b3643';
 
 const Wrapper = styled.div`
   display: flex;
