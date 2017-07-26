@@ -1,33 +1,42 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import NavBar from './components/NavBar';
-import SideBar from './components/SideBar';
+import Profile from './Profile';
+import About from './About';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
 
 const Wrapper = styled.div`
-  display: flex;
+  display: block;
   width: 100%;
 `;
 
-const Content = styled.section`
-  width: 100%;
-  background-color: #eef1f5;
-`;
 
 class App extends Component {
   render() {
-    console.log(this.state);
     return (
       <div>
         <NavBar />
         <Wrapper>
-          <SideBar />
-          <Content>
-            Test
-          </Content>
+          <Router>
+            <Switch>
+              <Route path="/" exact component={Profile}/>
+              <Route path="/about" component={About}/>
+            </Switch>
+          </Router>
         </Wrapper>
       </div>
     );
   }
 }
+
+
+// <SideBar />
+// <Content>
+//   Test
+// </Content>
 
 export default App;

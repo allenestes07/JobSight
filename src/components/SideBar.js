@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 import profileimg from '../images/profileimg.jpg';
+import {
+  NavLink
+} from 'react-router-dom'
 
 const navColor = '#2b3643';
 
 const SideBar = styled.aside`
-  width: 300px;
+  display: block;
+  float: left;
+  width: 25%;
   height: 100%;
   background-color: #333333;
   color: #FFFFFF;
   padding-bottom: 10px;
+  overflow: hidden;
 
   > h3 {
     text-align:center;
@@ -20,7 +26,8 @@ const SideBar = styled.aside`
 const ActiveBarBtn = styled.button`
   margin-top:10px;
   padding: 5px;
-  width: 290px;
+  width: 100%;
+  overflow: hidden;
   height: 30px;
   background-color: ${navColor};
   border: none;
@@ -37,8 +44,10 @@ const ActiveBarBtn = styled.button`
 const SideBarBtn = styled.button`
   margin-top: 5px;
   padding: 5px;
-  width: 290px;
+  width: 100%;
+  overflow: hidden;
   height: 30px;
+  float: left;
   background-color: ${navColor};
   border: none;
   border-left: 4px solid  #36c6d3;
@@ -99,14 +108,16 @@ class NavSideBar extends Component {
       </UserIcon>
         Profile
     </ActiveBarBtn>
-    <SideBarBtn>
-      <UserIcon>
-        <FontAwesome
-          name='home'
-        />
-      </UserIcon>
-        About
-    </SideBarBtn>
+    <NavLink to="/about">
+      <SideBarBtn>
+        <UserIcon>
+          <FontAwesome
+            name='home'
+          />
+        </UserIcon>
+          About
+      </SideBarBtn>
+    </NavLink>
   </SideBar>
   );
  }
