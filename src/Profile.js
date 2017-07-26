@@ -18,7 +18,6 @@ const Content = styled.section`
 
 class Profile extends Component {
   render() {
-    console.log(this.state);
     return (
       <Wrapper>
         <SideBar />
