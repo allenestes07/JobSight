@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import SideBar from './components/SideBar';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,19 +22,21 @@ class Profile extends Component {
   render() {
     return (
       <Wrapper>
-        <SideBar />
+        <SideBar users={this.props.users}/>
         <Content>
-          Test Content
+          <p>Majors: {this.props.users.major}</p>
+          <p>GPA: {this.props.users.gpa}</p>
+          <p>College: {this.props.users.college}</p>
         </Content>
       </Wrapper>
     );
   }
 }
 
+function mapStatetoProps(state) {
+  return {
+    users: state.users
+  }
+}
 
-// <SideBar />
-// <Content>
-//   Test
-// </Content>
-
-export default Profile;
+export default connect(mapStatetoProps)(Profile);

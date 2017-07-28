@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome';
 import profileimg from '../images/profileimg.jpg';
 import {
   NavLink
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 const navColor = '#2b3643';
 
@@ -96,7 +96,7 @@ class NavSideBar extends Component {
   <SideBar>
     <UserHeader>
       <h3>
-      Allen Estes
+        {`${this.props.users.firstname} ${this.props.users.lastname}`}
       </h3>
     </UserHeader>
     <Image src={profileimg} />
@@ -122,6 +122,5 @@ class NavSideBar extends Component {
   );
  }
 }
-
 
 export default NavSideBar;

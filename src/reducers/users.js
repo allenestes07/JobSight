@@ -1,4 +1,4 @@
-export default function users(state=[], action = {}) {
+export default function testusers(state=[], action = {}) {
 
   switch(action.type) {
     default: return state;
