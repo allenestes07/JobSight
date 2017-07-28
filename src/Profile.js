@@ -11,11 +11,34 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.section`
+  padding: 10px 0px 10px 0px;
   display: inline-block;
   float: left;
   width: 75%;
   background-color: #eef1f5;
   overflow: auto;
+`;
+
+const CardContainer = styled.div`
+  padding: 2px 16px;
+`;
+const Card = styled.div`
+  margin-left: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 45%;
+  padding: 5px;
+  border-radius: 5px;
+  background:#333333;
+
+  >h4 {
+    display: inline;
+    color: #dfc48c;
+    }
+  >p {
+    display: inline;
+    color: #9b869c;
+    }
 `;
 
 class Profile extends Component {
@@ -24,9 +47,11 @@ class Profile extends Component {
       <Wrapper>
         <SideBar users={this.props.users}/>
         <Content>
-          <p>Majors: {this.props.users.major}</p>
-          <p>GPA: {this.props.users.gpa}</p>
-          <p>College: {this.props.users.college}</p>
+        <Card>
+          <h4>College: </h4><p>{this.props.users.college}</p><br />
+          <h4>Majors: </h4><p>{this.props.users.major}</p><br />
+          <h4>GPA: </h4><p>{this.props.users.gpa}</p><br />
+        </Card>
         </Content>
       </Wrapper>
     );
